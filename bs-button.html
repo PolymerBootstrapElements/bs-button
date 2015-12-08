@@ -1,0 +1,18 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="bs-button">
+
+    <template>
+
+        <button class="btn" on-click="{{onClick}}">
+            <content></content>
+        </button>
+
+    </template>
+
+    <script>
+        Polymer({
+            is: 'bs-button'
+        });
+    </script>
+</dom-module>
