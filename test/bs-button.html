@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>paper-button basic tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="../../bootstrap/dist/css/bootstrap.min.css">
+    <script src="../../jquery/dist/jquery.min.js"></script>
+    <script src="../../bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="../../webcomponentsjs/webcomponents.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../bs-button.html">
+
+</head>
+<body>
+
+<bs-button id="successButton" type="success">Success</bs-button>
+
+<script>
+    suite('<bs-button>', function () {
+
+        test('Success button contains <button> with .btn-success CSS class', function (done) {
+            var button = document.getElementById('successButton');
+
+            Polymer.Base.async(function(){
+                var underlyingButton = button.querySelector('button');
+                expect(underlyingButton).to.exist;
+                expect([].slice.call(underlyingButton.classList)).to.include('btn-success');
+                done();
+            }, 1);
+
+        });
+
+    });
+</script>
+</body>
+</html>
