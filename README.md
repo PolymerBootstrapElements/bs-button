@@ -1,5 +1,7 @@
 # <bs-button>
 
+[![Build Status](https://travis-ci.org/PolymerBootstrapElements/bs-button.svg?branch=master)](https://travis-ci.org/PolymerBootstrapElements/bs-button)
+
 Bootstrap Design for Buttons thru Polymer Components.
 
 Buttons as defined in Bootstrap: http://getbootstrap.com/css/#buttons
