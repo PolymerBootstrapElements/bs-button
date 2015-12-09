@@ -67,7 +67,7 @@ Name        | Data         | Description
 
 3. Code
 
-4. Create or update *./test* for each polymer component you modify.
+4. Create or update [test suite](test/) for each polymer component you modify.
 
 5. Update [demo page](demo/index.html) and [README.md](README.md) (this file) if applicable.
 
