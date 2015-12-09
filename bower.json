@@ -14,7 +14,8 @@
     "twitter"
   ],
   "main": [
-    "bs-button.html"
+    "bs-button.html",
+    "bs-link-button.html"
   ],
   "private": true,
   "repository": {
@@ -26,11 +27,11 @@
   "ignore": [],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.1.0",
-    "bootstrap": "~3.3.6",
-    "marked-element": "PolymerElements/marked-element#~1.1.1"
+    "bootstrap": "~3.3.6"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^3.3.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
+    "marked-element": "PolymerElements/marked-element#~1.1.1"
   }
 }
