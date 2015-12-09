@@ -25,15 +25,13 @@ For this bare Bootstrap code:
 </button>
 ```
 
-You get this using <bs-button>:
+You get this using `<bs-button>`:
 
 ```html
 <bs-button type="success" block active size="lg" icon="globe">
     Visit website
 </bs-button>
 ```
-
-All properties are bindable.
 
 ## API
 
@@ -60,10 +58,10 @@ Name        | Data         | Description
 
 1. Fork it
 
-3. Code ^^
+2. Code ^^
 
-4. Create or update *./test* for each polymer component you modify.
+3. Create or update *./test* for each polymer component you modify.
 
-5. Update demo page (*./demo/index.html*) and *README.md* if applicable
+4. Update demo page (*./demo/index.html*) and *README.md* if applicable
 
 5. Create a PR and pray
