@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>paper-button basic tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="../../bootstrap/dist/css/bootstrap.min.css">
+    <script src="../../jquery/dist/jquery.min.js"></script>
+    <script src="../../bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="../../webcomponentsjs/webcomponents.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../bs-link-button.html">
+
+</head>
+<body>
+
+<bs-link-button id="standardButton">Standard</bs-link-button>
+<bs-link-button id="hrefButton" href="http://polymer-project.org">Href</bs-link-button>
+
+<script>
+    suite('<bs-link-button>', function () {
+
+        test('Standard button full-fill default values', function () {
+            var button = document.getElementById('standardButton');
+
+            var underlyingButton = button.querySelector('a');
+            expect(underlyingButton).to.exist;
+            expect(underlyingButton.getAttribute('href')).to.be.eql('javascript:void(0);');
+        });
+
+        test('With href button contains <a> with provided url', function () {
+            var button = document.getElementById('hrefButton');
+
+            var underlyingButton = button.querySelector('a');
+            expect(underlyingButton).to.exist;
+            expect(underlyingButton.getAttribute('href')).to.be.eql('http://polymer-project.org');
+        });
+
+    });
+</script>
+</body>
+</html>
