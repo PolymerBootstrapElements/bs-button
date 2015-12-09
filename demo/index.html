@@ -1,19 +1,222 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>bs-button demo page</title>
 
-    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../bower_components/polymer/polymer.html"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
 
-    <script src="../bs-button.html"></script>
+    <title>bs-button demo</title>
+
+    <link rel="stylesheet" href="../../bootstrap/dist/css/bootstrap.min.css">
+    <script src="../../jquery/dist/jquery.min.js"></script>
+    <script src="../../bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+    <link rel="import" href="../../marked-element/marked-element.html">
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../bs-button.html">
+    <link rel="import" href="../bs-link-button.html">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        .bs-example {
+            position: relative;
+            padding: 45px 15px 15px;
+            margin: 0;
+            border-color: #e5e5e5 #eee #eee;
+            border-style: solid;
+            border-width: 1px 0;
+            box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05);
+        }
+
+        .bs-example:after {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #959595;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            content: "Example";
+        }
+    </style>
 </head>
 <body>
+<h1>&lt;bs-button&gt; demo page</h1>
+<p>Here are some bootstrap button rendering thru polymer components.</p>
 
-<h1>&lt;bs-button&gt;</h1>
+<div class="usecase">
+    <h3>Buttons can be normal, active, toggleable, or disabled</h3>
+    <div class="bs-example">
+        <p>
+            <bs-button>link</bs-button>
+            <bs-button active>active</bs-button>
+            <bs-button toggles active>toggles</bs-button>
+            <bs-button disabled="true">disabled</bs-button>
+        </p>
+        <p>
+            <bs-button type="primary">link</bs-button>
+            <bs-button type="primary" active>active</bs-button>
+            <bs-button type="primary" toggles active>toggles</bs-button>
+            <bs-button type="primary" disabled="true">disabled</bs-button>
+        </p>
+    </div>
+    <figure>
+        <marked-element>
+            <div class="markdown-html"></div>
+            <script type="text/markdown">
+```html
+<bs-button>link</bs-button>
+<bs-button active>active</bs-button>
+<bs-button toggles active>toggles</bs-button>
+<bs-button disabled="true">disabled</bs-button>
+```
 
-<bs-button on-click="alert('Clicked');">Click ?</bs-button>
+            </script>
+        </marked-element>
+    </figure>
+</div>
+
+<div class="usecase">
+    <h3>Buttons can also be large, small or very small</h3>
+    <div class="bs-example">
+        <p>
+            <bs-button size="lg">Large Button</bs-button>
+            <bs-button>Normal Button</bs-button>
+            <bs-button size="sm">Small Button</bs-button>
+            <bs-button size="xs">Extra Small Button</bs-button>
+        </p>
+        <p>
+            <bs-button type="primary" size="lg">Large Button</bs-button>
+            <bs-button type="primary">Normal Button</bs-button>
+            <bs-button type="primary" size="sm">Small Button</bs-button>
+            <bs-button type="primary" size="xs">Extra Small Button</bs-button>
+        </p>
+    </div>
+    <figure>
+        <marked-element>
+            <div class="markdown-html"></div>
+            <script type="text/markdown">
+```html
+<bs-button size="lg">Large Button</bs-button>
+<bs-button>Normal Button</bs-button>
+<bs-button size="sm">Small Button</bs-button>
+<bs-button size="xs">Extra Small Button</bs-button>
+```
+
+            </script>
+        </marked-element>
+    </figure>
+</div>
+
+<div class="usecase">
+    <h3>Buttons can be HTML links</h3>
+    <marked-element markdown="Empty link are actually using `javascript:void(0);` for `href` value."></marked-element>
+    <div class="bs-example">
+            <bs-link-button href="http://polymer-project.org" icon="globe">Polymer website</bs-link-button>
+            <bs-link-button>Empty link</bs-link-button>
+    </div>
+    <figure>
+        <marked-element>
+            <div class="markdown-html"></div>
+            <script type="text/markdown">
+```html
+<bs-link-button href="http://polymer-project.org" icon="globe">Polymer website</bs-link-button>
+<bs-link-button>Empty link</bs-link-button>
+```
+
+            </script>
+        </marked-element>
+    </figure>
+</div>
+
+<div class="usecase">
+    <h3>Buttons can be used as block</h3>
+    <div class="bs-example">
+        <div style="width: 50vw;" class="well center-block">
+            <bs-button size="lg" block>Block level button</bs-button>
+            <bs-button size="lg" type="primary" block>Block level button</bs-button>
+        </div>
+    </div>
+    <figure>
+        <marked-element>
+            <div class="markdown-html"></div>
+            <script type="text/markdown">
+```html
+<bs-button type="lg" block>Block lbevel utton</bs-button>
+<bs-button type="lg" type="primary" block>Block level button</bs-button>
+```
+
+            </script>
+        </marked-element>
+    </figure>
+</div>
+
+<div class="usecase">
+    <h3>Buttons can have icons</h3>
+
+    <p>Use here the glyph icon name extracted from <a href="http://getbootstrap.com/components/#glyphicons">Bootstrap
+        Glyph</a> class name. E.g.: <em>glyphicon
+        glyphicon-<strong>pencil</strong></em></p>
+
+    <div class="bs-example">
+        <bs-button icon="check">link</bs-button>
+        <bs-button icon="trash" active>active</bs-button>
+        <bs-button icon="eye-open" toggles active>toggles</bs-button>
+        <bs-button icon="pencil" disabled>disabled</bs-button>
+    </div>
+
+    <figure>
+        <marked-element>
+            <div class="markdown-html"></div>
+            <script type="text/markdown">
+```html
+<bs-button icon="check">link</bs-button>
+<bs-button icon="trash" active>active</bs-button>
+<bs-button icon="eye-open" toggles active>toggles</bs-button>
+<bs-button icon="pencil" disabled>disabled</bs-button>
+```
+
+            </script>
+        </marked-element>
+    </figure>
+</div>
+
+<div class="usecase">
+    <h3>Buttons can be styled using BS classes</h3>
+    <div class="bs-example">
+        <bs-button type="default">Default</bs-button>
+        <bs-button type="primary">Primary</bs-button>
+        <bs-button type="success">Success</bs-button>
+        <bs-button type="info">Info</bs-button>
+        <bs-button type="warning">Warning</bs-button>
+        <bs-button type="danger">Danger</bs-button>
+        <bs-button type="link">Link</bs-button>
+    </div>
+    <figure>
+        <marked-element>
+            <div class="markdown-html"></div>
+            <script type="text/markdown">
+```html
+<bs-button type="default">Default</bs-button>
+<bs-button type="primary">Primary</bs-button>
+<bs-button type="success">Success</bs-button>
+<bs-button type="info">Info</bs-button>
+<bs-button type="warning">Warning</bs-button>
+<bs-button type="danger">Danger</bs-button>
+<bs-button type="link">Link</bs-button>
+```
+
+            </script>
+        </marked-element>
+    </figure>
+</div>
 
 
 </body>

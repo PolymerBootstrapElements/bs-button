@@ -2,7 +2,7 @@
 
 <link rel="import" href="bs-button-behavior.html">
 
-<dom-module id="bs-button">
+<dom-module id="bs-link-button">
 
     <style>
         /* hack due to BS class embedding */
@@ -14,19 +14,25 @@
     </style>
 
     <template>
-        <button class$="btn btn-{{type}} {{_size}} {{_block}} {{_active}}"
-                disabled$="{{disabled}}"
-                on-click="handleClick">
+        <a href$="{{href}}"
+           class$="btn btn-{{type}} {{_size}} {{_block}} {{_active}} {{_disabled}}"
+           on-click="handleClick">
             <span hidden$="{{!icon}}" class$="glyphicon glyphicon-{{icon}}"></span>
             <content></content>
-        </button>
+        </a>
     </template>
     <script>
         Polymer({
-            is: 'bs-button',
+            is: 'bs-link-button',
             behaviors: [
                 BootstrapButtonBehavior
-            ]
+            ],
+            properties: {
+                href: {
+                    type: String,
+                    value: 'javascript:void(0);'
+                }
+            }
         });
     </script>
 </dom-module>

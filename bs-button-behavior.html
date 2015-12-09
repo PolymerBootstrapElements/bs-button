@@ -1,0 +1,59 @@
+<script>
+
+    BootstrapButtonBehavior = {
+        properties: {
+            type: {
+                type: String,
+                value: 'default'
+            },
+            disabled: {
+                type: Boolean,
+                value: false,
+                notify: true,
+                reflectToAttribute: true,
+                observer: '_disabledChanged'
+            },
+            toggles: {
+                type: Boolean,
+                value: false
+            },
+            active: {
+                type: Boolean,
+                value: false,
+                notify: true,
+                reflectToAttribute: true,
+                observer: '_activeChanged'
+            },
+            size: {
+                type: String,
+                value: '',
+                observer: '_sizeChanged'
+            },
+            block: {
+                type: Boolean,
+                value: false,
+                observer: '_blockChanged'
+            }
+        },
+        _disabledChanged: function () {
+            this._disabled = this.disabled && 'disabled';
+        },
+        _sizeChanged: function () {
+            this._size = this.size && ('btn-' + this.size);
+        },
+        _blockChanged: function () {
+            this._block = this.block && 'btn-block';
+        },
+        _activeChanged: function () {
+            this._active = this.active ? 'active' : '';
+        },
+        handleClick: function (e) {
+            if (this.toggles) {
+                this.active = !this.active;
+            }
+
+            this.fire('click', {active: this.active});
+        }
+    };
+
+</script>

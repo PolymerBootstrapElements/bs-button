@@ -1,7 +1,7 @@
 {
   "name": "bs-button",
   "version": "0.0.1",
-  "description": "Material design buttons",
+  "description": "Bootstrap design for buttons",
   "authors": [
     "Gregory Ghez <gregory.ghez@gmail.com>"
   ],
@@ -26,7 +26,8 @@
   "ignore": [],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.1.0",
-    "bootstrap": "~3.3.6"
+    "bootstrap": "~3.3.6",
+    "marked-element": "PolymerElements/marked-element#~1.1.1"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^3.3.0",
