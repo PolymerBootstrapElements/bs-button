@@ -65,10 +65,10 @@ Name        | Data         | Description
 
 1. Fork it
 
-3. Code ^^
+3. Code
 
 4. Create or update *./test* for each polymer component you modify.
 
-5. Update demo page (*./demo/index.html*) and *README.md* if applicable
+5. Update [demo page](demo/index.html) and [README.md](README.md) (this file) if applicable.
 
 5. Create a PR and pray
