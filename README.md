@@ -8,7 +8,7 @@ Buttons as defined in Bootstrap: http://getbootstrap.com/css/#buttons
 
 ## Installation
 
-Using bower `npm install -g bower`
+Using bower (`npm install -g bower`)
 
 ```
 bower install --save PolymerBootstrapElements/bs-button
@@ -16,21 +16,28 @@ bower install --save PolymerBootstrapElements/bs-button
 
 ## Usage
 
-For this bare Bootstrap code:
+Bootstrap should be referenced in your web page if you want to get benefits from <bs-button> element.
+
+```html
+<link rel="stylesheet" href="libs/bs/boostrap.css">
+<script src="libs/bs/bootstrap.js"></script>
+```
+
+Use <bs-button> like this:
+
+```html
+<bs-button type="success" block active size="lg" icon="globe">
+    Visit website
+</bs-button>
+```
+
+To generate this Bootstrap code:
 
 ```html
 <button class="btn btn-success btn-block active btn-lg">
     <span class="glyphicon glyphicon-globe"></span>
     Visit website
 </button>
-```
-
-You get this using `<bs-button>`:
-
-```html
-<bs-button type="success" block active size="lg" icon="globe">
-    Visit website
-</bs-button>
 ```
 
 ## API
@@ -58,10 +65,10 @@ Name        | Data         | Description
 
 1. Fork it
 
-2. Code ^^
+3. Code ^^
 
-3. Create or update *./test* for each polymer component you modify.
+4. Create or update *./test* for each polymer component you modify.
 
-4. Update demo page (*./demo/index.html*) and *README.md* if applicable
+5. Update demo page (*./demo/index.html*) and *README.md* if applicable
 
 5. Create a PR and pray
