@@ -16,7 +16,7 @@ bower install --save PolymerBootstrapElements/bs-button
 
 ## Usage
 
-Bootstrap should be referenced in your web page if you want to get benefits from <bs-button> element.
+Bootstrap should be referenced in your web page if you want to get benefits from &lt;bs-button&gt; element.
 
 ```html
 <link rel="stylesheet" href="libs/bs/boostrap.css">
