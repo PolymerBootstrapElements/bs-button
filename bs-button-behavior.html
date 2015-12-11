@@ -1,11 +1,19 @@
 <script>
 
+    /* @polymerBehavior */
     BootstrapButtonBehavior = {
         properties: {
+            /**
+             * Defines button appearance type among "default", "primary", "info", "warning", "danger" or "link".
+             * @type String
+             */
             type: {
                 type: String,
                 value: 'default'
             },
+            /**
+             * Defines button state disabled.
+             */
             disabled: {
                 type: Boolean,
                 value: false,
@@ -13,10 +21,16 @@
                 reflectToAttribute: true,
                 observer: '_disabledChanged'
             },
+            /**
+             * Allows button active state toggling on click.
+             */
             toggles: {
                 type: Boolean,
                 value: false
             },
+            /**
+             * Defines button active state.
+             */
             active: {
                 type: Boolean,
                 value: false,
@@ -24,11 +38,17 @@
                 reflectToAttribute: true,
                 observer: '_activeChanged'
             },
+            /**
+             * Defines button size among "xs", "sm", "" (normal) or "lg".
+             */
             size: {
                 type: String,
                 value: '',
                 observer: '_sizeChanged'
             },
+            /**
+             * Indicates button behaves like an HTML block. (CSS display: "block")
+             */
             block: {
                 type: Boolean,
                 value: false,
@@ -47,7 +67,15 @@
         _activeChanged: function () {
             this._active = this.active ? 'active' : '';
         },
-        handleClick: function (e) {
+
+        /**
+         * The `click` event is fired whenever user click on element.
+         *
+         * @event click
+         * @detail {{active: Boolean}}
+         */
+
+        _handleClick: function (e) {
             if (this.toggles) {
                 this.active = !this.active;
             }

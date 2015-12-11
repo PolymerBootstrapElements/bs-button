@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^3.3.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
-    "marked-element": "PolymerElements/marked-element#~1.1.1"
+    "marked-element": "PolymerElements/marked-element#~1.1.1",
+    "iron-component-page": "polymerelements/iron-component-page#~1.1.2"
   }
 }

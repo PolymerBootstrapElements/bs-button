@@ -1,19 +1,32 @@
 <link rel="import" href="../polymer/polymer.html">
 
 <link rel="import" href="bs-button-behavior.html">
+<link rel="import" href="bs-link-button.html">
 
+<!--
+HTML button using Bootstrap button style.
+
+Example:
+
+    <bs-button type="primary" icon="globe">Hello World</bs-button>
+
+@demo
+-->
 <dom-module id="bs-button">
-
-    <style>
-        /* hack due to BS class embedding */
-        :host[block] + :host[block] {
-            margin-top: 5px;
-            display: block;
-        }
-
-    </style>
-
     <template>
+        <!-- Style definition inside template due to recommendation:
+        https://www.polymer-project.org/1.0/docs/devguide/styling.html
+            => "Note: Prior to Polymer 1.1, the recommendation was to place <style> tags inside the <dom-module> for an element (but outside the <template>). This is still supported, but is no longer recommended."
+        -->
+        <style>
+            /* hack due to BS class embedding */
+            :host[block] + :host[block] {
+                margin-top: 5px;
+                display: block;
+            }
+
+        </style>
+
         <button class$="btn btn-{{type}} {{_size}} {{_block}} {{_active}}"
                 disabled$="{{disabled}}"
                 on-click="handleClick">
@@ -21,13 +34,16 @@
             <content></content>
         </button>
     </template>
+
     <script>
         Polymer({
             is: 'bs-button',
+
             behaviors: [
                 BootstrapButtonBehavior
             ]
         });
     </script>
 </dom-module>
+
 

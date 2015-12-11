@@ -2,6 +2,15 @@
 
 <link rel="import" href="bs-button-behavior.html">
 
+<!--
+HTML link using Bootstrap button style.
+
+Example:
+
+    <bs-link-button type="primary" icon="globe">Hello World</bs-link-button>
+
+@demo
+-->
 <dom-module id="bs-link-button">
 
     <style>
@@ -28,6 +37,9 @@
                 BootstrapButtonBehavior
             ],
             properties: {
+                /**
+                 * Defines anchor url used when user click on element.
+                 */
                 href: {
                     type: String,
                     value: 'javascript:void(0);'
