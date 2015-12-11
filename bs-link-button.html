@@ -13,23 +13,26 @@ Example:
 -->
 <dom-module id="bs-link-button">
 
-    <style>
-        /* hack due to BS class embedding */
-        :host[block] + :host[block] {
-            margin-top: 5px;
-            display: block;
-        }
-
-    </style>
-
     <template>
+
+        <style>
+            /* hack due to BS class embedding */
+            :host[block] + :host[block] {
+                margin-top: 5px;
+                display: block;
+            }
+
+        </style>
+
         <a href$="{{href}}"
            class$="btn btn-{{type}} {{_size}} {{_block}} {{_active}} {{_disabled}}"
            on-click="handleClick">
             <span hidden$="{{!icon}}" class$="glyphicon glyphicon-{{icon}}"></span>
             <content></content>
         </a>
+
     </template>
+
     <script>
         Polymer({
             is: 'bs-link-button',
@@ -47,5 +50,6 @@ Example:
             }
         });
     </script>
+
 </dom-module>
 
