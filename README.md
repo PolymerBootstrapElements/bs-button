@@ -26,10 +26,12 @@ Bootstrap should be referenced in your web page if you want to get benefits from
 <script src="libs/bs/bootstrap.js"></script>
 ```
 
-Use <bs-button> like this:
+Use **bs-button** like this:
 
 ```html
-<link rel="import" href="../bs-button/bs-button.html">
+<!-- Includes both bs-button and bs-link-button elements -->
+<link rel="import" href="libs/bs-button/bs-button.html">
+
 <bs-button type="success" block active size="lg" icon="globe">
     Visit website
 </bs-button>
