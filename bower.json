@@ -1,7 +1,7 @@
 {
   "name": "bs-button",
   "version": "0.0.1",
-  "description": "Bootstrap design for buttons",
+  "description": "Bootstrap styled button using Polymer Elements.",
   "authors": [
     "Gregory Ghez <gregory.ghez@gmail.com>"
   ],

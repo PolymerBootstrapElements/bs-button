@@ -58,7 +58,7 @@ And you can run it via:
 
     polyserve
 
-Once running, you can preview your element at
+Once running, you can preview your elements at
 `http://localhost:8080/components/bs-button/`, where `bs-button` is the name of the directory containing it.
 
 
