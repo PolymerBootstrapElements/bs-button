@@ -7,49 +7,16 @@ HTML link using Bootstrap button style.
 
 Example:
 
-    <bs-link-button type="primary" icon="globe">Hello World</bs-link-button>
+    <a is="bs-link-button" type="primary">Hello World</a>
 
 @demo
 -->
-<dom-module id="bs-link-button">
-
-    <template>
-
-        <style>
-            /* hack due to BS class embedding */
-            :host[block] + :host[block] {
-                margin-top: 5px;
-                display: block;
-            }
-
-        </style>
-
-        <a href$="{{href}}"
-           class$="btn btn-{{type}} {{_size}} {{_block}} {{_active}} {{_disabled}}"
-           on-click="handleClick">
-            <span hidden$="{{!icon}}" class$="glyphicon glyphicon-{{icon}}"></span>
-            <content></content>
-        </a>
-
-    </template>
-
-    <script>
-        Polymer({
-            is: 'bs-link-button',
-            behaviors: [
-                BootstrapButtonBehavior
-            ],
-            properties: {
-                /**
-                 * Defines anchor url used when user click on element.
-                 */
-                href: {
-                    type: String,
-                    value: 'javascript:void(0);'
-                }
-            }
-        });
-    </script>
-
-</dom-module>
-
+<script>
+    Polymer({
+        is: 'bs-link-button',
+        extends: 'a',
+        behaviors: [
+            BootstrapButtonBehavior
+        ]
+    });
+</script>

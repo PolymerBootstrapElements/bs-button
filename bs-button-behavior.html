@@ -9,7 +9,9 @@
              */
             type: {
                 type: String,
-                value: 'default'
+                value: 'default',
+                reflectToAttribute: true,
+                observer: '_typeChanged'
             },
             /**
              * Defines button state disabled.
@@ -56,31 +58,42 @@
             }
         },
         _disabledChanged: function () {
-            this._disabled = this.disabled && 'disabled';
+            if (this.disabled) {
+                this.setAttribute('disabled', '');
+            } else {
+                this.removeAttribute('disabled');
+            }
         },
-        _sizeChanged: function () {
-            this._size = this.size && ('btn-' + this.size);
+        _sizeChanged: function (n, p) {
+            this.classList.remove('btn-' + p);
+            if (n) this.classList.add('btn-' + n);
         },
         _blockChanged: function () {
-            this._block = this.block && 'btn-block';
+            if (this.block) {
+                this.classList.add('btn-block');
+            } else {
+                this.classList.remove('btn-block');
+            }
         },
         _activeChanged: function () {
-            this._active = this.active ? 'active' : '';
+            if (this.active) {
+                this.classList.add('active');
+            } else {
+                this.classList.remove('active');
+            }
+        },
+        _typeChanged: function (n, p) {
+            this.classList.remove('btn-' + p);
+            this.classList.add('btn-' + (n || 'default'));
         },
 
-        /**
-         * The `click` event is fired whenever user click on element.
-         *
-         * @event click
-         * @detail {{active: Boolean}}
-         */
-
-        _handleClick: function (e) {
-            if (this.toggles) {
-                this.active = !this.active;
-            }
-
-            this.fire('click', {active: this.active});
+        created: function () {
+            this.classList.add('btn');
+            this.addEventListener('click', function (e) {
+                if (this.toggles) {
+                    this.active = !this.active;
+                }
+            }.bind(this));
         }
     };
 

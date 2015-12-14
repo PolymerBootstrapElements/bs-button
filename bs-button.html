@@ -15,25 +15,11 @@ Example:
 <dom-module id="bs-button">
 
     <template>
-        <!-- Style definition inside template due to recommendation:
-        https://www.polymer-project.org/1.0/docs/devguide/styling.html
-            => "Note: Prior to Polymer 1.1, the recommendation was to place <style> tags inside the <dom-module> for an element (but outside the <template>). This is still supported, but is no longer recommended."
-        -->
-        <style>
-            /* hack due to BS class embedding */
-            :host[block] + :host[block] {
-                margin-top: 5px;
-                display: block;
-            }
 
-        </style>
-
-        <button class$="btn btn-{{type}} {{_size}} {{_block}} {{_active}}"
-                disabled$="{{disabled}}"
-                on-click="handleClick">
+        <template is="dom-if" if="{{icon}}">
             <span hidden$="{{!icon}}" class$="glyphicon glyphicon-{{icon}}"></span>
-            <content></content>
-        </button>
+        </template>
+        <content></content>
 
     </template>
 

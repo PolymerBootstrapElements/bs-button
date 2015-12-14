@@ -17,26 +17,24 @@
 </head>
 <body>
 
-<bs-link-button id="standardButton">Standard</bs-link-button>
-<bs-link-button id="hrefButton" href="http://polymer-project.org">Href</bs-link-button>
+<a is="bs-link-button" id="standardButton" href="http://polymer-project.org">Standard</a>
+<a is="bs-link-button" type="primary" id="primaryButton" href="http://polymer-project.org">Standard</a>
 
 <script>
-    suite('<bs-link-button>', function () {
+    suite('<a is="bs-link-button">', function () {
 
-        test('Standard button full-fill default values', function () {
-            var button = document.getElementById('standardButton');
+        test('Standard link button full-fill default values', function () {
+            var link = document.getElementById('standardButton');
 
-            var underlyingButton = button.querySelector('a');
-            expect(underlyingButton).to.exist;
-            expect(underlyingButton.getAttribute('href')).to.be.eql('javascript:void(0);');
+            expect(link.hasAttribute('disabled')).to.not.be.ok;
+            expect([].slice.call(link.classList)).to.not.include('active');
+            expect([].slice.call(link.classList)).to.include('btn-default');
         });
 
-        test('With href button contains <a> with provided url', function () {
-            var button = document.getElementById('hrefButton');
+        test('Primary styled link contains <button> with .btn-primary CSS class', function () {
+            var link = document.getElementById('primaryButton');
 
-            var underlyingButton = button.querySelector('a');
-            expect(underlyingButton).to.exist;
-            expect(underlyingButton.getAttribute('href')).to.be.eql('http://polymer-project.org');
+            expect([].slice.call(link.classList)).to.include('btn-primary');
         });
 
     });

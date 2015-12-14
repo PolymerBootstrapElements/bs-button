@@ -62,13 +62,13 @@
     <h3>Buttons can be normal, active, toggleable, or disabled</h3>
     <div class="bs-example">
         <p>
-            <bs-button>link</bs-button>
+            <bs-button>button</bs-button>
             <bs-button active>active</bs-button>
             <bs-button toggles active>toggles</bs-button>
             <bs-button disabled="true">disabled</bs-button>
         </p>
         <p>
-            <bs-button type="primary">link</bs-button>
+            <bs-button type="primary">button</bs-button>
             <bs-button type="primary" active>active</bs-button>
             <bs-button type="primary" toggles active>toggles</bs-button>
             <bs-button type="primary" disabled="true">disabled</bs-button>
@@ -106,12 +106,12 @@
     <h3>Buttons can be HTML links</h3>
     <marked-element markdown="Empty link are actually using `javascript:void(0);` for `href` value."></marked-element>
     <div class="bs-example">
-        <bs-link-button href="http://polymer-project.org" icon="globe">Polymer website</bs-link-button>
-        <bs-link-button>Empty link</bs-link-button>
+        <a is="bs-link-button" type="primary" href="http://polymer-project.org">Polymer website</a>
+        <a is="bs-link-button">Empty link</a>
     </div>
     <figure>
-       <pre><code>&lt;bs-link-button href=&quot;http://polymer-project.org&quot; icon=&quot;globe&quot;&gt;Polymer website&lt;/bs-link-button&gt;
-&lt;bs-link-button&gt;Empty link&lt;/bs-link-button&gt;</code></pre>
+       <pre><code>&lt;a is="bs-link-button" type="primary" href=&quot;http://polymer-project.org&quot;&gt;Polymer website&lt;/a&gt;
+&lt;a is="bs-link-button"&gt;Empty link&lt;/a&gt;</code></pre>
     </figure>
 
     <h3>Buttons can be used as block</h3>

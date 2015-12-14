@@ -31,61 +31,45 @@
         test('Standard button full-fill default values', function () {
             var button = document.getElementById('standardButton');
 
-            var underlyingButton = button.querySelector('button');
-            expect(underlyingButton).to.exist;
-
-            expect(underlyingButton.hasAttribute('disabled')).to.not.be.ok;
-            expect([].slice.call(underlyingButton.classList)).to.not.include('active');
-            expect([].slice.call(underlyingButton.classList)).to.include('btn-default');
+            expect(button.hasAttribute('disabled')).to.not.be.ok;
+            expect([].slice.call(button.classList)).to.not.include('active');
+            expect([].slice.call(button.classList)).to.include('btn-default');
         });
 
         test('Success button contains <button> with .btn-success CSS class', function () {
             var button = document.getElementById('successButton');
 
-            var underlyingButton = button.querySelector('button');
-            expect(underlyingButton).to.exist;
-            expect([].slice.call(underlyingButton.classList)).to.include('btn-success');
+            expect([].slice.call(button.classList)).to.include('btn-success');
         });
 
         test('Large button contains <button> with .btn-lg CSS class', function () {
             var button = document.getElementById('largeButton');
 
-            var underlyingButton = button.querySelector('button');
-            expect(underlyingButton).to.exist;
-            expect([].slice.call(underlyingButton.classList)).to.include('btn-lg');
+            expect([].slice.call(button.classList)).to.include('btn-lg');
         });
 
         test('Block button contains <button> with .btn-block CSS class', function () {
             var button = document.getElementById('blockButton');
 
-            var underlyingButton = button.querySelector('button');
-            expect(underlyingButton).to.exist;
-            expect([].slice.call(underlyingButton.classList)).to.include('btn-block');
+            expect([].slice.call(button.classList)).to.include('btn-block');
         });
 
         test('Active button contains <button> with .active CSS class', function () {
             var button = document.getElementById('activeButton');
 
-            var underlyingButton = button.querySelector('button');
-            expect(underlyingButton).to.exist;
-            expect([].slice.call(underlyingButton.classList)).to.include('active');
+            expect([].slice.call(button.classList)).to.include('active');
         });
 
         test('Disabled button contains <button> with disabled attribute', function () {
             var button = document.getElementById('disabledButton');
 
-            var underlyingButton = button.querySelector('button');
-            expect(underlyingButton).to.exist;
-            expect(underlyingButton.hasAttribute('disabled')).to.be.ok;
+            expect(button.hasAttribute('disabled')).to.be.ok;
         });
 
         test('Icon button embed <button> with .glyphicon classed span', function () {
             var button = document.getElementById('iconButton');
 
-            var underlyingButton = button.querySelector('button');
-            expect(underlyingButton).to.exist;
-
-            var iconHolder = underlyingButton.querySelector('span.glyphicon.glyphicon-globe');
+            var iconHolder = button.querySelector('span.glyphicon.glyphicon-globe');
             expect(iconHolder).to.exist;
         });
 
